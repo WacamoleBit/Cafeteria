@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Cafe.Web.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Cafe.Web.Models;
 using Web.API.Auth;
 
 namespace Cafe.Web.Controllers
@@ -33,9 +32,9 @@ namespace Cafe.Web.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -334,7 +333,7 @@ namespace Cafe.Web.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -385,6 +384,6 @@ namespace Cafe.Web.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

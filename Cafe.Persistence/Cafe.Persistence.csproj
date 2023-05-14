@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Managers\BebidaManager.cs" />
+    <Compile Include="Mapeo\BebidaEntityTypeConfigurations.cs" />
     <Compile Include="Migrations\202305100646139_Initialize.cs" />
     <Compile Include="Migrations\202305100646139_Initialize.designer.cs">
       <DependentUpon>202305100646139_Initialize.cs</DependentUpon>
@@ -80,6 +82,7 @@
       <DependentUpon>202305100646139_Initialize.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

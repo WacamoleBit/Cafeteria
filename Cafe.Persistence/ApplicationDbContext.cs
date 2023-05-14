@@ -1,4 +1,5 @@
 ﻿using Cafe.Model;
+using Cafe.Persistence.Mapeo;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,10 @@ namespace Cafe.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new BebidaEntityTypeConfigurations());
 
+            base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<ApplicationUser>();
         }
 
